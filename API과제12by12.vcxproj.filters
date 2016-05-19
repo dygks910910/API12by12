@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\CBlock">
+      <UniqueIdentifier>{a15dad75-1e77-427f-8505-649f7c39fd8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CBoard">
+      <UniqueIdentifier>{a43af092-3a86-4bd4-b5af-bc9dfd30e156}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="소스.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType1.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType2.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType3.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType4.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType5.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType6.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockType7.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardManager.cpp">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardType1.cpp">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardType2.cpp">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardType3.cpp">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Rectangle.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType1.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType2.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType3.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType4.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType5.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType6.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockType7.h">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardManager.h">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardType1.h">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardType2.h">
+      <Filter>소스 파일\CBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardType3.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="API과제12by12.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+</Project>
