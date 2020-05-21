@@ -19,6 +19,10 @@ CGameManager::~CGameManager()
 
 void CGameManager::render(HDC hdc)
 {
+
+
+
+
 	m_BoardManager->render(hdc);
 	m_BlockManager->render(hdc);
 }
@@ -56,7 +60,7 @@ BOOL CGameManager::inCircle(const int &x, const int &y)
 		{
 			if (m_BlockManager->getBlockArr()[i] != nullptr)
 				if (m_BlockManager->getBlockArr()[i]->getRectArr()[j] != nullptr)
-					if (LengthPts(m_BlockManager->getBlockArr()[i]->getRectArr()[j]->getX(), m_BlockManager->getBlockArr()[i]->getRectArr()[j]->getY(), x, y) < 16)
+					if (LengthPts(m_BlockManager->getBlockArr()[i]->getRectArr()[j]->getX(), m_BlockManager->getBlockArr()[i]->getRectArr()[j]->getY(), x, y) < CBlock::getClientRect()->right / 15 / 2 / 2)
 					{
 						m_iSelectBlockIdx = i;
 						if (m_BlockManager->getBlockArr()[m_iSelectBlockIdx] != nullptr)
@@ -76,7 +80,7 @@ BOOL CGameManager::inCircle(const int &x, const int &y)
 BOOL CGameManager::inCircle(const int &x, const int &y, const int &mx, const int &my)
 {
 
-	if (LengthPts(mx, my, x, y) < 16)
+	if (LengthPts(mx, my, x, y) < CBlock::getClientRect()->right / 15 / 2 / 2)
 	{
 
 		return true;

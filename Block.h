@@ -4,6 +4,8 @@
 const int MAX_ARR_IDX = 20;
 class CBlock
 {
+private:
+	 static RECT* m_pClient_Rect;
 public:
 	CBlock(const int &x, const int &y, const int &blocknum = rand()%6+1
 		, const COLORREF color = RGB(rand() % 255, rand() % 255, rand() % 255)
@@ -37,7 +39,9 @@ public://getter
 	int getX()const{ return m_iX; }
 	int getY()const{ return m_iY; }
 	int getBlockNum()const{ return m_iBlockNum; };
+	static RECT* getClientRect() { return m_pClient_Rect; }
 	//setter
+	static void setClientRect(RECT* clientRect) { m_pClient_Rect = clientRect; }
 	void setCheckSelect(const BOOL b){ m_bCheckSelect = b; };
 	void setColor(const COLORREF color){ m_color = color; };
 	void setRectArr(const int &index, CRectangle* prect){ m_pRectArr[index] = prect; };

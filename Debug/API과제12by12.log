@@ -1,24 +1,2 @@
-﻿  소스.cpp
-  Rectangle.cpp
-  GameManager.cpp
-d:\project\projects\api과제12by12\api12by12\gamemanager.cpp(46): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\project\projects\api과제12by12\api12by12\gamemanager.cpp(59): warning C4244: '인수': 'const int'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\project\projects\api과제12by12\api12by12\gamemanager.cpp(59): warning C4244: '인수': 'int'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\project\projects\api과제12by12\api12by12\gamemanager.cpp(52): warning C4101: 'tempi' :참조되지 않은 지역 변수입니다.
-d:\project\projects\api과제12by12\api12by12\gamemanager.cpp(79): warning C4244: '인수': 'const int'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  BoardType3.cpp
-  BoardType2.cpp
-  BoardType1.cpp
-  BoardManager.cpp
-  BlockType7.cpp
-  BlockType6.cpp
-  BlockType5.cpp
-  BlockType4.cpp
-  BlockType3.cpp
-  BlockType2.cpp
-  BlockType1.cpp
-  BlockManager.cpp
-d:\project\projects\api과제12by12\api12by12\blockmanager.cpp(7): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\project\projects\api과제12by12\api12by12\blockmanager.cpp(158): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  API과제12by12.vcxproj -> D:\Project\Projects\API과제12by12\API12by12\Debug\API과제12by12.exe
+﻿  BlockType7.cpp
+  API과제12by12.vcxproj -> D:\Projects\12x12\Debug\API과제12by12.exe

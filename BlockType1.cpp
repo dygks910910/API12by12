@@ -5,7 +5,7 @@ CBlockType1::CBlockType1(const int &x, const int &y) :CBlock(x,y)
 {
 	for (int i = 0; i < getBlockNum(); i++)
 	{
-		CRectangle *temp = new CRectangle(x + ((i * 2) * 16), y, 16);
+		CRectangle *temp = new CRectangle(x + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), y, CBlock::getClientRect()->right / 15 / 2 / 2);
 		temp->setColor(getColor());
 		setRectArr(i, temp);
 		
@@ -33,7 +33,7 @@ void CBlockType1::reBuild()
 	setBlockNum(rand() % 3 + 4);
 	for (int i = 0; i < getBlockNum(); i++)
 	{
-		CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+		CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 		temp->setColor(getColor());
 		setRectArr(i, temp);
 	}

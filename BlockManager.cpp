@@ -3,7 +3,7 @@
 
 CBlockManager::CBlockManager(const RECT &clientsize) :m_clientSize(clientsize)
 {
-
+	CBlock::setClientRect(&m_clientSize);
 	srand(time(NULL));
 	for (int i = 0; i < 3; i++)
 	{

@@ -96,9 +96,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	case WM_PAINT:
+	{
+		HDC backMemDC;
+		HBITMAP backBitmap;
+		RECT rt;
+		GetClientRect(hWnd, &rt); 
+		//static HBITMAP backBitmap = NULL;
+		HBITMAP   hOldBitmap;
+
+
 		hdc = BeginPaint(hWnd, &ps);
-		gameManager -> render(hdc);
+
+		backMemDC = CreateCompatibleDC(hdc);
+		backBitmap = CreateCompatibleBitmap(hdc, rt.right, rt.bottom); //도화지 준비!
+		hOldBitmap = (HBITMAP)SelectObject(backMemDC, backBitmap);
+		FillRect(backMemDC, &rt, (HBRUSH)GetStockObject(WHITE_BRUSH)); //도화지 색 변경
+
+
+		gameManager->render(backMemDC);
+
+		BitBlt(hdc, 0, 0, rt.right, rt.bottom, backMemDC, 0, 0, SRCCOPY);
+		
+		DeleteObject(SelectObject(backMemDC, hOldBitmap));
+		DeleteDC(backMemDC);
 		EndPaint(hWnd, &ps);
+	}
 		break;
 	case WM_DESTROY:
 		delete gameManager;

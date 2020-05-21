@@ -10,14 +10,14 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 	case 1:
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -27,14 +27,14 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 	case 2:
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -46,14 +46,14 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		for (int i = 0; i < 3; i++)
 		{
 
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + 16 * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + CBlock::getClientRect()->right / 15 / 2 / 2 * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -61,7 +61,7 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -74,14 +74,14 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		for (int i = 0; i < 4; i++)
 		{
 
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(x + ((i * 2) * 16), getY() + 16 * 2, 16);
+			CRectangle *temp = new CRectangle(x + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + CBlock::getClientRect()->right / 15 / 2 / 2 * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -89,7 +89,7 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -97,7 +97,7 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 3, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 3, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -111,14 +111,14 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		for (int i = 0; i < 4; i++)
 		{
 
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + 16 * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + CBlock::getClientRect()->right / 15 / 2 / 2 * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -126,7 +126,7 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -134,7 +134,7 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 3, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 3, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -147,14 +147,14 @@ CBlockType7::CBlockType7(const int &x, const int &y) :CBlock(x, y)
 	case 6:
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -193,14 +193,14 @@ void CBlockType7::reBuild()
 	case 1:
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -210,14 +210,14 @@ void CBlockType7::reBuild()
 	case 2:
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -227,14 +227,14 @@ void CBlockType7::reBuild()
 		for (int i = 0; i < 3; i++)
 		{
 
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + 16 * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + CBlock::getClientRect()->right / 15 / 2 / 2 * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -242,7 +242,7 @@ void CBlockType7::reBuild()
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -253,14 +253,14 @@ void CBlockType7::reBuild()
 		for (int i = 0; i < 4; i++)
 		{
 
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + 16 * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + CBlock::getClientRect()->right / 15 / 2 / 2 * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -268,7 +268,7 @@ void CBlockType7::reBuild()
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -276,7 +276,7 @@ void CBlockType7::reBuild()
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 3, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 3, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -289,14 +289,14 @@ void CBlockType7::reBuild()
 		for (int i = 0; i < 4; i++)
 		{
 
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + 16 * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + CBlock::getClientRect()->right / 15 / 2 / 2 * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -304,7 +304,7 @@ void CBlockType7::reBuild()
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 2, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 2, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -312,7 +312,7 @@ void CBlockType7::reBuild()
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2) * 3, 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2) * 3, CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);
@@ -323,14 +323,14 @@ void CBlockType7::reBuild()
 	case 6:
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY(), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY(), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			setRectArr(i, temp);
 			idxtemp = i;
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			CRectangle *temp = new CRectangle(getX() + ((i * 2) * 16), getY() + (16 * 2), 16);
+			CRectangle *temp = new CRectangle(getX() + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), getY() + (CBlock::getClientRect()->right / 15 / 2 / 2 * 2), CBlock::getClientRect()->right / 15 / 2 / 2);
 			temp->setColor(getColor());
 			idxtemp += 1;
 			setRectArr(idxtemp, temp);

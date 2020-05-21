@@ -66,6 +66,9 @@
     <ClCompile Include="BoardType3.cpp">
       <Filter>소스 파일\CBoard</Filter>
     </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>소스 파일\CBlock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Rectangle.h">
