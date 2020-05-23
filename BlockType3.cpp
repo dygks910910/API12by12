@@ -3,6 +3,7 @@
 
 CBlockType3::CBlockType3(const int &x, const int &y) :CBlock(x,y)
 {
+	//ㅁㅁㅁ
 	int idxtemp = 0;
 	for (int i = 0; i < getBlockNum()/2; i++)//3보다 클경우에만들어와야함.
 	{
@@ -82,4 +83,42 @@ void CBlockType3::reBuild()
 	{
 		setBlockNum(5);
 	}
+}
+
+bool CBlockType3::PasteBlock(int (*pCalcBoard)[12], int x, int y)
+{
+	if (x + (getBlockNum()-1)/2 > 12)
+		return false;
+	if (y + (getBlockNum() - 1) / 2 > 12)
+		return false;
+	for (int i = 0; i < (getBlockNum()-1)/2; i++)//x축검사.
+	{
+		if (pCalcBoard[x + i][y] != 0)
+		{
+			return false;
+		}
+	}
+	for (int i = 0; i < (getBlockNum() - 1) / 2; i++)//y축검사.
+	{
+		if (pCalcBoard[x+(getBlockNum() - 1) / 2][y+i] != 0)
+		{
+			return false;
+		}
+	}
+
+	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//x축검사.
+	{
+		if (pCalcBoard[x + i][y] == 0)
+		{
+			pCalcBoard[x + i][y] = 1;
+		}
+	}
+	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//y축검사.
+	{
+		if (pCalcBoard[x+(getBlockNum() - 1) / 2][y + i] == 0)
+		{
+			pCalcBoard[x + (getBlockNum() - 1) / 2][y + i] = 1;
+		}
+	}
+	return true;
 }

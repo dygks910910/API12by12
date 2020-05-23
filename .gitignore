@@ -47,3 +47,7 @@ Temporary Items
 .apdisk
 *.ipch
 *.db
+*.obj
+*.opendb
+Release/API과제12by12.tlog/API과제12by12.write.1u.tlog
+*.tlog

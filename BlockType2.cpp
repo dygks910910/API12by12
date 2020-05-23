@@ -3,6 +3,7 @@
 
 CBlockType2::CBlockType2(const int &x, const int &y) :CBlock(x,y)
 {
+	//¤±¤±
 	for (int i = 0; i < getBlockNum(); i++)
 	{
 		CRectangle *temp = new CRectangle(x, y + ((i * 2) * CBlock::getClientRect()->right / 15 / 2 / 2), CBlock::getClientRect()->right / 15 / 2 / 2);
@@ -38,4 +39,21 @@ void CBlockType2::reBuild()
 		temp->setColor(getColor());
 		setRectArr(i, temp);
 	}
+}
+
+bool CBlockType2::PasteBlock(int (*pCalcBoard)[12], int x, int y)
+{
+	if (y + getBlockNum()-1 > 12)
+		return false;
+	for (int i = 0; i < getBlockNum() - 1; ++i)
+	{
+		if (pCalcBoard[x][y + i] != 0)
+			return false;
+	}
+	for (int i = 0; i < getBlockNum(); ++i)
+	{
+		if (pCalcBoard[x][y + i] == 0)
+			pCalcBoard[x][y + i] = 1;
+	}
+	return true;
 }

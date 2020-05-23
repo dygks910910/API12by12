@@ -337,3 +337,34 @@ void CBlockType7::reBuild()
 		}
 	}
 }
+#include<cmath>
+bool CBlockType7::PasteBlock(int (*pCalcBoard)[12], int x, int y)
+{
+	if (x +  sqrt(getBlockNum())-1 > 12)
+		return false;
+	if (y + sqrt(getBlockNum()) -1> 12)
+		return false;
+	for (int i = 0; i < sqrt(getBlockNum())-1; i++)//x축검사.
+	{
+		for (int j = 0; j < sqrt(getBlockNum())-1; j++)//y축검사.
+		{
+			if (pCalcBoard[x+i][y + j] != 0)
+			{
+				return false;
+			}
+		}
+	}
+	
+	for (int i = 0; i < sqrt(getBlockNum())-1; i++)//x축검사.
+	{
+		for (int j = 0; j < sqrt(getBlockNum())-1; j++)//y축검사.
+		{
+			if (pCalcBoard[x + i][y + j] == 0)
+			{
+				pCalcBoard[x + i][y + j] = 1;
+			}
+		}
+	}
+
+	return true;
+}

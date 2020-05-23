@@ -30,6 +30,7 @@ public:
 	void resetBlock();
 	void moveBlock(const int &idxforBlockNum,const int &x,const int &y);
 	BOOL inCircle(const int &x, const int &y, const int &mx, const int &my);
+	void CreateNewBlock();
 
 };
 

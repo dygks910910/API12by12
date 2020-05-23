@@ -51,5 +51,6 @@ public://getter
 public:
 	virtual void render(HDC hdc)PURE;
 	virtual void reBuild()PURE;//블럭이 3보다 작을때 리빌드용
+	virtual bool PasteBlock(int (*pCalcBoard)[12],int x,int y)PURE;
 };
 

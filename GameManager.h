@@ -10,6 +10,7 @@ public:
 private:
 	CBoardManager *m_BoardManager;
 	CBlockManager *m_BlockManager;
+	int m_chArrBoardCalculator[12][12];//0이면 블록이 있는곳 아니면 없는곳.
 	int m_iSelectBlockIdx;//idx가 0~2까지이기떄문에 초기화를 4로시켜줌.
 	int m_iPrevX;//블럭이 안착되지 못할경우 돌아갈 좌표값.
 	int m_iPrevY;//
@@ -17,6 +18,7 @@ public:
 	static int cntMovingBlock;
 public:
 	void render(HDC hdc);
+	void RenderArrBoardCalcurator(HDC hdc);
 	void resetBlock();
 	void changeBoardType();
 	float LengthPts(const float &x1, const float &y1
@@ -27,5 +29,6 @@ public:
 	BOOL inCircle(const int &x, const int &y, const int &mx, const int &my);
 	BOOL checkInBlock(CRectangle*(*board)[12], CBlock **block, const int &y);
 	void checkBlockColor();
+	bool WriteCalcArr(int x, int y);
 };
 

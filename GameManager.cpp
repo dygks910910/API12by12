@@ -8,6 +8,13 @@ CGameManager::CGameManager(RECT &clientsize)
 	m_iSelectBlockIdx = 4;
 	m_iPrevX = 0;
 	m_iPrevY = 0;
+	for (int i = 0; i < 12; ++i)
+	{
+		for (int j = 0; j < 12; ++j)//0이면 블록이 없는곳.1이면 있는곳.
+			m_chArrBoardCalculator[i][j] = 0;
+	}
+
+	m_chArrBoardCalculator[4][5] = 1;
 }
 
 
@@ -19,12 +26,30 @@ CGameManager::~CGameManager()
 
 void CGameManager::render(HDC hdc)
 {
-
-
-
-
 	m_BoardManager->render(hdc);
 	m_BlockManager->render(hdc);
+	RenderArrBoardCalcurator(hdc);
+}
+
+void CGameManager::RenderArrBoardCalcurator(HDC hdc)
+{
+	RECT textArea;
+	
+	for (int y = 0; y < 12; ++y)
+	{
+		for (int x = 0; x < 12; ++x)
+		{
+			textArea.left = 500 + x * 10;
+			textArea.top = 50 + y * 20;
+			textArea.right = textArea.left + 10;
+			textArea.bottom = textArea.top + 20;
+
+			char a[2];
+			itoa(m_chArrBoardCalculator[x][y], a, 10);
+			DrawText(hdc, a, -1, &textArea, DT_CENTER);
+
+		}
+	}
 }
 
 
@@ -124,7 +149,9 @@ void CGameManager::CheckInBlock()
 									{
 										cntBlock++;
 										if (m_BlockManager->getBlockArr()[m_iSelectBlockIdx]->getColor() != NULL)
+										{
 											m_BoardManager->getBoard()->getBoard1()[i][j]->setColor(m_BlockManager->getBlockArr()[m_iSelectBlockIdx]->getColor());
+										}
 									}
 								}
 						}
@@ -277,4 +304,45 @@ void CGameManager::checkBlockColor()
 	{
 		PostQuitMessage(0);
 	}
+}
+
+bool CGameManager::WriteCalcArr(int x, int y)
+{
+	if (m_iSelectBlockIdx == 4)
+		return false;
+	CBlock* selectedBlock = m_BlockManager->getBlockArr()[m_iSelectBlockIdx];
+	if (selectedBlock == nullptr)
+	{
+		//movingBlock(m_iPrevX, m_iPrevY);
+		return false;
+	}
+	int iBoardX = 0;
+	int iBoardY = 0;
+
+	for (int i = 0; i < 12; i++)
+	{
+		for (int j = 0; j < 12; j++)
+		{
+			if (m_BoardManager->getBoard()->getBoard1()[i][j] != nullptr)
+			{
+				if (m_BlockManager->getBlockArr()[m_iSelectBlockIdx] != nullptr
+					&& m_BoardManager->getBoard()->getBoard1()[i][j] != nullptr)
+					for (int k = 0; k < m_BlockManager->getBlockArr()[m_iSelectBlockIdx]->getBlockNum() + 1; k++)
+					{
+						if (m_BlockManager->getBlockArr()[m_iSelectBlockIdx]->getRectArr()[k] != nullptr)
+							if (inCircle(m_BoardManager->getBoard()->getBoard1()[i][j]->getX()//보드좌표와 블럭좌표를 비교후 같은자리에 색입히기
+								, m_BoardManager->getBoard()->getBoard1()[i][j]->getY()
+								, x
+								, y))
+							{
+								iBoardY = i;
+								iBoardX = j; 
+
+							}
+					}
+			}
+		}
+	}
+	return selectedBlock->PasteBlock(m_chArrBoardCalculator, iBoardX, iBoardY);
+	
 }

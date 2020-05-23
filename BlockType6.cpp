@@ -81,3 +81,8 @@ void CBlockType6::reBuild()
 		setBlockNum(5);
 	}
 }
+
+bool CBlockType6::PasteBlock(int(*pCalcBoard)[12], int x, int y)
+{
+	return false;
+}
