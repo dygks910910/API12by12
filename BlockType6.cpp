@@ -86,37 +86,36 @@ bool CBlockType6::PasteBlock(int(*pCalcBoard)[12], int x, int y)
 {
 	if ((x + getBlockNum() - 1) / 2 > 12)
 		return false;
-	if (y + (getBlockNum() - 1) / 2 > 12)
+	if (y - (getBlockNum() - 1) / 2 > 12)
 		return false;
-	for (int i = 0; i < (getBlockNum() - 1) / 2; i++)//x축검사.
+	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//x축검사.
 	{
-		if (pCalcBoard[x + i][(y + getBlockNum() - 1) / 2] != 0)
+		if (pCalcBoard[x + i][y] != 0)
 		{
 			return false;
 		}
 	}
-	for (int i = 0; i < (getBlockNum() - 1) / 2; i++)//y축검사.
+	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//y축검사.
 	{
-		if (pCalcBoard[x][y + i] != 0)
+		if (pCalcBoard[x + ((getBlockNum() - 1) / 2)][y - i] != 0)
 		{
 			return false;
 		}
 	}
 
-	for (int i = 0; i < (getBlockNum() - 1) / 2; i++)//x축검사.
+	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//x축검사.
 	{
-		if (pCalcBoard[x + i][(y + getBlockNum() - 1) / 2] == 0)
+		if (pCalcBoard[x + i][y] == 0)
 		{
-			pCalcBoard[x + i][(y + getBlockNum() - 1) / 2] = 1;
+			pCalcBoard[x + i][y] = 1;
 		}
 	}
 	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//y축검사.
 	{
-		if (pCalcBoard[x][y + i] == 0)
+		if (pCalcBoard[x + ((getBlockNum() - 1) / 2)][y-i] == 0)
 		{
-			pCalcBoard[x][y + i] = 1;
+			pCalcBoard[x + ((getBlockNum() - 1) / 2)][y-i] = 1;
 		}
 	}
 	return true;
-	return false;
 }

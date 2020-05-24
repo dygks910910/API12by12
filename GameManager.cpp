@@ -1,7 +1,8 @@
 #include "GameManager.h"
 
 int CGameManager::cntMovingBlock = 0;
-CGameManager::CGameManager(RECT &clientsize)
+CGameManager::CGameManager(RECT &clientsize):
+	m_iScore(0)
 {
 	m_BoardManager = new CBoardManager(clientsize);
 	m_BlockManager = new CBlockManager(clientsize);
@@ -13,8 +14,6 @@ CGameManager::CGameManager(RECT &clientsize)
 		for (int j = 0; j < 12; ++j)//0이면 블록이 없는곳.1이면 있는곳.
 			m_chArrBoardCalculator[i][j] = 0;
 	}
-
-	m_chArrBoardCalculator[4][5] = 1;
 }
 
 
@@ -29,6 +28,15 @@ void CGameManager::render(HDC hdc)
 	m_BoardManager->render(hdc);
 	m_BlockManager->render(hdc);
 	RenderArrBoardCalcurator(hdc);
+	renderScore(hdc);
+}
+
+void CGameManager::renderScore(HDC hdc)
+{
+	
+	RECT scoreRt{ 300, 100, 600, 200 };
+	std::string strScore = getScoreStr();
+	DrawText(hdc, strScore.c_str(), strScore.size(), &scoreRt, DT_CENTER);
 }
 
 void CGameManager::RenderArrBoardCalcurator(HDC hdc)
@@ -196,6 +204,8 @@ void CGameManager::checkBlockColor()
 							for (int k = 0; k < 12; k++)
 							{
 								m_BoardManager->getBoard()->getBoard1()[i][k]->setColor(RGB(255, 255, 255));
+								m_chArrBoardCalculator[k][i] = 0;
+								m_iScore += 1;
 							}
 						}
 					}
@@ -219,6 +229,8 @@ void CGameManager::checkBlockColor()
 							for (int k = 0; k < 12; k++)
 							{
 								m_BoardManager->getBoard()->getBoard1()[k][i]->setColor(RGB(255, 255, 255));
+								m_chArrBoardCalculator[i][k] = 0;
+								m_iScore += 1;
 							}
 						}
 					}
@@ -316,8 +328,8 @@ bool CGameManager::WriteCalcArr(int x, int y)
 		//movingBlock(m_iPrevX, m_iPrevY);
 		return false;
 	}
-	int iBoardX = 0;
-	int iBoardY = 0;
+	int iBoardX = -1;
+	int iBoardY = -1;
 
 	for (int i = 0; i < 12; i++)
 	{
@@ -343,6 +355,23 @@ bool CGameManager::WriteCalcArr(int x, int y)
 			}
 		}
 	}
+	if (iBoardX == -1 && iBoardY == -1)
+		return false;
 	return selectedBlock->PasteBlock(m_chArrBoardCalculator, iBoardX, iBoardY);
 	
+}
+
+void CGameManager::returnBlock()
+{
+	movingBlock(m_iPrevX, m_iPrevY);
+}
+
+std::string CGameManager::getScoreStr()
+{
+	char tmp[10];
+	itoa(m_iScore, tmp, 10);
+	char scoreTxt[20] = "Score : ";
+	strcat(scoreTxt, tmp);
+	std::string rv = scoreTxt;
+	return rv;
 }

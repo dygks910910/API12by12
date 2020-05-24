@@ -2,6 +2,7 @@
 #include"BlockManager.h"
 #include"BoardManager.h"
 #include"Rectangle.h"
+#include<string>
 class CGameManager
 {
 public:
@@ -14,10 +15,12 @@ private:
 	int m_iSelectBlockIdx;//idx가 0~2까지이기떄문에 초기화를 4로시켜줌.
 	int m_iPrevX;//블럭이 안착되지 못할경우 돌아갈 좌표값.
 	int m_iPrevY;//
+	int m_iScore;
 public:
 	static int cntMovingBlock;
 public:
 	void render(HDC hdc);
+	void renderScore(HDC hdc);
 	void RenderArrBoardCalcurator(HDC hdc);
 	void resetBlock();
 	void changeBoardType();
@@ -30,5 +33,8 @@ public:
 	BOOL checkInBlock(CRectangle*(*board)[12], CBlock **block, const int &y);
 	void checkBlockColor();
 	bool WriteCalcArr(int x, int y);
+	void returnBlock();
+	int getScore() { return m_iScore; }
+	std::string getScoreStr();
 };
 

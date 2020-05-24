@@ -90,7 +90,7 @@ bool CBlockType5::PasteBlock(int (*pCalcBoard)[12], int x, int y)
 		return false;
 	for (int i = 0; i <= (getBlockNum() - 1) / 2; i++)//xÃà°Ë»ç.
 	{
-		if (pCalcBoard[x + i][(y + getBlockNum() - 1) / 2] != 0)
+		if (pCalcBoard[x + i][(y + (getBlockNum() - 1) / 2)] != 0)
 		{
 			return false;
 		}

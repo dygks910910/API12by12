@@ -4,9 +4,9 @@ class CBlockType6 :
 	public CBlock
 {
 	/*
-	け
-	け
-	け け け
+	         け
+	         け
+	�� け け
 	*/
 public:
 	CBlockType6(const int &x, const int &y);

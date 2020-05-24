@@ -62,14 +62,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	case WM_CREATE:
 		GetClientRect(hWnd, &clientSize);
 		gameManager = new CGameManager(clientSize);
-		SetTimer(hWnd, 1, 100000, nullptr);
+		SetTimer(hWnd, 1, 60*5*1000, nullptr);
 		break;
 	case WM_TIMER:
-		/*if (wParam == 1)
+		if (wParam == 1)
 		{
+			
 			MessageBox(hWnd, "타임오버", "타임오버", MB_OK);
 			PostQuitMessage(0);
-		}*/
+		}
 		break;
 	case WM_KEYDOWN:
 		if (wParam == VK_LEFT)
@@ -95,8 +96,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		mx = LOWORD(lParam);
 		my = HIWORD(lParam);
 		bool bWriteSucess = gameManager->WriteCalcArr(mx, my);
-		gameManager->CheckInBlock();
-		gameManager->checkBlockColor();
+		if (bWriteSucess)
+		{
+			gameManager->CheckInBlock();
+			gameManager->checkBlockColor();
+		}
+		else
+		{
+			gameManager->returnBlock();
+		}
+		
 	}
 		break;
 	case WM_MOUSEMOVE:
