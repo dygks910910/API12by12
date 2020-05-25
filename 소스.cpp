@@ -10,7 +10,6 @@ RECT clientSize;
 CGameManager *gameManager;
 BOOL drag = false;
 static int mx, my = 0;
-
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance
 	, LPSTR lpszCmdParam, int nCmdShow)
 {
@@ -118,21 +117,22 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		break;
 	case WM_PAINT:
 	{
-		static RECT rt;
-		GetClientRect(hWnd, &rt);
-		//static HBITMAP backBitmap = NULL;
 		static HBITMAP   hOldBitmap;
-		static HDC backMemDC;
-		static HBITMAP backBitmap;
+		static HDC hBackMemDC;
+		static HBITMAP hBackBitmap;
+
 		hdc = BeginPaint(hWnd, &ps);
-		backMemDC = CreateCompatibleDC(hdc);
-		backBitmap = CreateCompatibleBitmap(hdc, rt.right, rt.bottom); //도화지 준비!
-		hOldBitmap = (HBITMAP)SelectObject(backMemDC, backBitmap);
-		FillRect(backMemDC, &rt, (HBRUSH)GetStockObject(WHITE_BRUSH)); //도화지 색 변경
-		gameManager->render(backMemDC);
-		BitBlt(hdc, 0, 0, rt.right, rt.bottom, backMemDC, 0, 0, SRCCOPY);
-		DeleteObject(SelectObject(backMemDC, hOldBitmap));
-		DeleteDC(backMemDC);
+		hBackMemDC = CreateCompatibleDC(hdc);
+		hBackBitmap = CreateCompatibleBitmap(hdc, clientSize.right, clientSize.bottom); //도화지 준비!
+		hOldBitmap = (HBITMAP)SelectObject(hBackMemDC, hBackBitmap);
+		FillRect(hBackMemDC, &clientSize, (HBRUSH)GetStockObject(WHITE_BRUSH)); //도화지 색 변경
+		//게임 오브젝트 그리기.
+		gameManager->render(hBackMemDC);
+		//전면버퍼로 복사
+		BitBlt(hdc, 0, 0, clientSize.right, clientSize.bottom, hBackMemDC, 0, 0, SRCCOPY);
+		//후처리.
+		DeleteObject(SelectObject(hBackMemDC, hOldBitmap));
+		DeleteDC(hBackMemDC);
 		EndPaint(hWnd, &ps);
 	}
 		break;
